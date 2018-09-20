@@ -1,0 +1,65 @@
+<!--pages/detail/detail.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<view class='detail-container'>
+  <view class='detail-content'>
+    <view class='user-card'>
+      <view class='user-avatar'>
+        <navigator url="/pages/user/user?loginname={{item.author.loginname}}" class='fill-navigator'>
+          <!-- <i-avatar src="{{pageData.author.avatar_url}}" size="large"></i-avatar> -->
+          <image class='circle-image' src='{{pageData.author.avatar_url}}'></image>
+        </navigator>
+      </view>
+      <view class='user-data'>
+        <view >
+          <text class='user-name'>{{pageData.author.loginname}}</text>
+          <text>
+            <text wx:if="{{pageData.top}}" class='top'>置顶</text>
+            <text wx:elif="{{pageData.good}}" class='good'>精华</text>
+          </text>
+        </view>
+        <view>
+          <!-- <text>{{pageData.create_at}}</text> -->
+          <text>{{pageData.visit_count}}次浏览</text>
+          <text>来自{{pageData.tab}}</text>
+        </view>
+      </view>
+      <view class='collection-container'>
+        <i-icon wx:if="{{pageData.is_collect}}" type="like_fill" size="28" color="#80848f" />
+        <i-icon wx:else type="like" size="28" color="#80848f" />
+      </view>
+    </view>
+    <view class='detail-content-title'>{{pageData.title}}</view>
+    <!-- 富文本 -->
+    <!-- <rich-text type="html" nodes="{{pageData.content}}" class='detail-content-content'></rich-text> -->
+    <view><template is="wxParse" data="{{wxParseData:article.nodes}}" /></view>
+    
+  </view>
+  <view class='replay-container'>
+    <!-- <view>last_reply_at:  {{reply.last_reply_at}}</view> -->
+    <view class='reply-count'>{{reply.reply_count}}条回复</view>
+    <view wx:for="{{reply.replies}}" wx:key="item.id" class='replay-item'>
+      <view class='user-card'>
+        <view class='user-avatar'>
+          <navigator url="/pages/user/user?loginname={{item.author.loginname}}" class='fill-navigator'>
+            <i-avatar src="{{item.author.avatar_url}}" size="large"></i-avatar>
+            <!-- <image class='circle-image' src='{{item.author.avatar_url}}'></image> -->
+          </navigator>
+        </view>
+        <view class='user-data'>
+          <view>
+            <text class='user-name'>{{item.author.loginname}}</text>
+          </view>
+          <view>
+            <text>{{index+1}}楼</text>
+            <!-- <text>{{item.create_at}}</text> -->
+          </view>
+        </view>
+        <view class='collection-container'>
+          <i-icon type="praise_fill" size="28" color="#80848f" />
+          <!-- <i-icon wx:else type="praise" size="28" color="#80848f" /> -->
+        </view>
+      </view>
+      <rich-text nodes="{{item.content}}"></rich-text>
+    </view>
+  </view>
+</view>

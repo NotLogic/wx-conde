@@ -1,0 +1,38 @@
+/**index.wxss**/
+.margin-r10{
+  margin-right: 5px;
+}
+/* 功能块：展开左侧菜单，返回顶部 */
+.fn-coontainer{
+  z-index: 2;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+/* 左侧菜单触发器 */
+.drawer-trigger{
+
+}
+.side-menu-container{
+  width: 50vw;
+  height: 100vh;
+  background-color: #fff;
+}
+.login-container{
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #eee;
+  
+}
+.menu-item{
+  height: 30px;
+  line-height: 30px;
+}
+.menu-icon,
+.menu-text{
+  margin-left: 15px;
+}
+.about{
+  margin-top: 5px;
+  border-top: 1px solid #eee;
+}

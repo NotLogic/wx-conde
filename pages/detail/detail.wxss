@@ -1,0 +1,65 @@
+/* pages/detail/detail.wxss */
+.detail-container{
+  font-size: 16px;
+  color: #333;
+  background-color: #efefef;
+}
+.user-name{
+  font-size: 14px;
+  font-weight: bold;
+}
+/* 内容 */
+.detail-content{
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 10px;
+  background-color: #fff;
+}
+.user-card{
+  position: relative;
+  height: 60px;
+}
+/* 头像 */
+.user-avatar{
+  float: left;
+  width: 60px;
+  height: 60px;
+}
+/*  */
+.user-data{
+  position: absolute;
+  left: 60px;
+  right: 50px;
+  height: 60px;
+}
+/* 收藏 */
+.collection-container{
+  float: right;
+  width: 50px;
+}
+
+.detail-content-title{
+  font-weight: bold;
+}
+.detail-content-content{
+  
+}
+/* .detail-content-content img{
+  max-width: 100%!important;
+  height: auto!important;
+} */
+/* 评论 */
+.replay-container{
+  background-color: #fff;
+}
+.reply-count{
+  padding-left: 20px;
+  font-size: 14px;
+  height: 30px;
+  line-height: 30px;
+  border-bottom: 1px solid #eee;
+}
+.replay-item{
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}

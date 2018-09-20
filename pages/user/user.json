@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "i-avatar": "../../dist/avatar/index"
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black"
+  }
+}

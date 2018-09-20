@@ -1,0 +1,38 @@
+<!--pages/user/user.wxml-->
+<view>
+  <view class='user-header'>
+    <!-- <image class='user-bg' src='../../images/user-bg1.jpg'></image> -->
+    <view class='avator-container'>
+      <image class='user-avator' src='{{pageData.avatar_url}}'></image>
+      <!-- <i-avatar src="{{pageData.avatar_url}}" size="large"></i-avatar> -->
+    </view>
+    <view class='text-center'>{{pageData.loginname}}</view>
+    <view class='text-center'>{{pageData.githubUsername}}@github.com</view>
+    <view>
+      <text>{{pageData.create_at}}</text>
+      <text class='fr'>{{pageData.score}}</text>
+    </view>
+  </view>
+  <view class='change-container'>
+    <view wx:for="{{currentMap}}" wx:key="{{item}}" class='change-container-item' data-current='{{index}}' data-value='{{item}}' bindtap='handleChange'>
+      {{item}}
+    </view>
+  </view>
+  <view wx:for="{{currentData}}" wx:key="" class='main-item'>
+    <view class='main-item-left'>
+      <navigator url="/pages/user/user?loginname={{item.author.loginname}}" class='fill-navigator'>
+        <image class='circle-image' src='{{item.author.avatar_url}}'></image>
+        <!-- <i-avatar src="{{item.author.avatar_url}}" size="large"></i-avatar> -->
+      </navigator>
+    </view>
+    <view class='main-item-right'>
+      <navigator url="/pages/detail/detail?id={{item.id}}&title={{item.title}}">
+        <view class='main-title'>{{item.title}}</view>
+        <view class='main-sub-title'>
+          <text>{{item.author.loginname}}</text>
+          <text class='fr'>1分钟前</text>
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>

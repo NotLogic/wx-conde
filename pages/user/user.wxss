@@ -1,0 +1,36 @@
+/* pages/user/user.wxss */
+.user-header{
+  position: relative;
+  padding: 15px;
+  /* wxss中不能使用本地图片，需要使用base64或网络图片 */
+  /* background: url('../../images/user-bg1.jpg') no-repeat left center; */
+}
+.user-bg{
+  
+}
+.text-center{
+  text-align: center;
+}
+.avator-container{
+  height: 60px;
+  padding-top: 20px;
+  text-align: center;
+}
+.user-avator{
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+/* 切换菜单 */
+.change-container{
+  display: flex;
+  height: 40px;
+  line-height: 40px;
+  background-color: #eee;
+}
+.change-container-item{
+  /* flex-flow: 1; */
+  width: 33.33%;
+  text-align: center;
+}

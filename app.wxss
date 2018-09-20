@@ -1,0 +1,87 @@
+/* 引入外部wxss */
+@import "/wxParse/wxParse.wxss";
+
+/**app.wxss**/
+.container {
+  font-size: 16px;
+  color: #333;
+} 
+.fr{
+  float: right;
+}
+.fl{
+  float: lefht;
+}
+.tab{
+  color: 777;
+  padding: 2px 5px;
+  border-radius: 5px;
+  background-color: #efefef;
+}
+.top{
+  color: #fff;
+  padding: 2px 5px;
+  border-radius: 5px;
+  background-color: #19be6b;
+}
+.good{
+  color: #ed3f14;
+  padding: 2px 5px;
+  border-radius: 5px;
+  border: 1px solid #ed3f14;
+}
+.fill-navigator{
+  height: 100%;
+}
+/* 对富文本内容进行优化展示 .markdown-text 富文本容器 */
+.markdown-text{
+  
+}
+.markdown-text img{
+  display: none;
+}
+.markdown-text ul,
+.markdown-text ol,
+.markdown-text li{
+  list-style: none;
+}
+.markdown-text a{
+  color: #19be6b;
+  text-decoration: underline;
+}
+
+/*  */
+.circle-image{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.main-item{
+  /* display: flex; */
+  position: relative;
+  padding: 15px;
+  height: 60px;
+  border-bottom: 1px solid #efefef;
+}
+.main-title{
+  height: 40px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow:ellipsis;
+}
+.main-sub-title{
+  font-size: 14px;
+  color: #666;
+}
+.main-item-left{
+  width: 60px;
+  height: 60px;
+}
+.main-item-right{
+  /* flex-grow: 1; */
+  position: absolute;
+  left: 90px;
+  right:20px;
+  top: 20px;
+  bottom: 20px;
+}

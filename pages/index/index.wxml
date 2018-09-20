@@ -1,0 +1,58 @@
+<!--index.wxml-->
+<view class='container'>
+  <!-- 侧边面板 -->
+  <i-drawer mode="left" visible="{{drawerShow}}" bind:close="toggleDrawer">
+    <view class='side-menu-container'>
+      <!-- <view class='login-container'>
+        <view class=''>
+          <i-avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" size="large"></i-avatar>
+        </view>
+        <view>点击头像登录</view>
+      </view> -->
+      <view wx:for="{{classifyMap}}" wx:key="{{index}}" data-classify='{{index}}' bindtap="updateData" class='menu-item'>
+        <i-icon class='menu-icon' type='{{classifyIcon[index]}}' size="20" />
+        <text class='menu-text'>{{item}}</text>
+      </view>
+      <view class='about menu-item'>
+        <navigator url='/pages/about/about'>
+          <i-icon class='menu-icon' type="prompt_fill" size="20"/>
+          <text class='menu-text'>关于</text>
+        </navigator>
+      </view>
+    </view>
+  </i-drawer>
+  <view class='fn-coontainer'>
+    <!-- 展开侧边面板 -->
+    <view class='drawer-trigger' bindtap="toggleDrawer">
+      <i-icon type="play_fill" size="28" color="#19be6b"/>
+    </view>
+    <!-- 返回顶部 -->
+    <view class='back-top' bindtap="backTop">
+      <i-icon type="packup" size="28" color="#19be6b"/>
+    </view>
+  </view>
+  <view wx:for="{{currentPageData}}" wx:key="item.id" class='main-item'>
+    <view class='main-item-left'>
+      <navigator url="/pages/user/user?loginname={{item.author.loginname}}" class='fill-navigator'>
+        <image class='circle-image' src='{{item.author.avatar_url}}'></image>
+        <!-- <i-avatar src="{{item.author.avatar_url}}" size="large"></i-avatar> -->
+      </navigator>
+    </view>
+    <view class='main-item-right'>
+      <navigator url="/pages/detail/detail?id={{item.id}}&title={{item.title}}">
+        <view class='main-title'>{{item.title}}</view>
+        <view class='main-sub-title'>
+          <text>{{item.reply_count}}</text>
+          <text>/</text>
+          <text class='margin-r10'>{{item.visit_count}}</text>
+          <text class='margin-r10 tab'>{{item.tab}}</text>
+          <text>
+            <text wx:if="{{item.top}}" class='top'>置顶</text>
+            <text wx:elif="{{item.good}}" class='good'>精华</text>
+          </text>
+          <text class='fr'>1分钟前</text>
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>

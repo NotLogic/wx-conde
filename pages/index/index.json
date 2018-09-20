@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "i-avatar": "../../dist/avatar/index",
+    "i-icon": "../../dist/icon/index",
+    "i-drawer": "../../dist/drawer/index"
+  }
+}

@@ -73,7 +73,6 @@ Page({
   },
   // 查看详情
   getDetails(id) {
-    id = id || '5b911f1837b3005a0b0e6c16'
     var vm = this
     gettopicsDetails(id).then(function (res) {
       var reply = {}, pageData={}

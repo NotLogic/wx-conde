@@ -23,7 +23,6 @@ Page({
       'dev': 'warning_fill'
     },
     currentPageData: [],
-    pageData: {},
     pager: {
       page: 1,
       limit: 10,
@@ -33,56 +32,52 @@ Page({
   },
   onLoad: function () {
     this.paging()
-    // 搜索一直超时，官网也是
-    // wx.request({
-    //   url: 'https://cnodejs.org/search',
-    //   data: {
-    //     q: 'react'
-    //   },
-    //   success: function (res) {
-    //     if (res.statusCode == 200) {
-    //       var resData = res.data
-    //       if (resData.success) {
-    //         var data = resData.data
-    //         console.log('搜索data: ',data)
-    //       }
-    //     }
-    //   },
-    //   fail: function (err) {
-    //     console.log('搜索err: ',err)
-    //   },
-    //   complete: function () {
-    //     wx.hideLoading();
-    //   }
-    // })
   },
-  updateData(event){
+  onPullDownRefresh(){
+    this.paging(true).then(function(){
+      wx.stopPullDownRefresh()
+    }).catch(function(){
+      wx.stopPullDownRefresh()
+    })
+  },
+  // 下拉到底触发
+  onReachBottom(){
+    var vm=this
+    vm.data.pager.page++
+    vm.paging()
+  },
+  switchClassify(event){
     var vm = this
     var eventData = event ? event.currentTarget.dataset : {}
     var classify = eventData.classify || vm.data.defaultClassify
-    vm.paging(classify)
+    vm.data.pager.tab = classify
+    vm.data.pager.page = 1
+    vm.paging(true)
   },
-  paging(classify){
+  paging(reset){
     var vm = this
-    // 关闭左侧面板
+    var classify = vm.data.pager.tab
     vm.setData({
       drawerShow: false
     })
-    classify = classify || vm.data.pager.tab
     wx.setNavigationBarTitle({
       title: vm.data.classifyMap[classify]
     })
-    vm.data.pager.tab = classify
-    gettopics(vm.data.pager).then(function (res) {
-      console.log('页面加载数据： ',res)
-      var pageData = vm.data.pageData
-      if (typeof pageData[classify] == 'undefined') {
-        pageData[classify] = res
-      } else {
-
-      }
-      vm.setData({
-        currentPageData: res
+    return new Promise(function(resolve,reject){
+      gettopics(vm.data.pager).then(function (res) {
+        var currentPageData = vm.data.currentPageData
+        if (reset) {
+          vm.setData({
+            currentPageData: res
+          })
+        } else {
+          vm.setData({
+            currentPageData: currentPageData.concat(res)
+          })
+        }
+        resolve()
+      }).catch(function(err){
+        reject(err)
       })
     })
   },

@@ -3,11 +3,19 @@
   margin-right: 5px;
 }
 /* 功能块：展开左侧菜单，返回顶部 */
-.fn-coontainer{
+.drawer-trigger,
+.back-top{
   z-index: 2;
   position: fixed;
-  right: 20px;
   bottom: 20px;
+  background-color: rgba(0,0,0,.1);
+  border-radius: 50%;
+}
+.drawer-trigger{
+  left: 20px;
+}
+.back-top{
+  right: 20px;
 }
 /* 左侧菜单触发器 */
 .drawer-trigger{

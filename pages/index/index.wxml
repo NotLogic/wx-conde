@@ -9,7 +9,7 @@
         </view>
         <view>点击头像登录</view>
       </view> -->
-      <view wx:for="{{classifyMap}}" wx:key="{{index}}" data-classify='{{index}}' bindtap="updateData" class='menu-item'>
+      <view wx:for="{{classifyMap}}" wx:key="{{index}}" data-classify='{{index}}' bindtap="switchClassify" class='menu-item'>
         <i-icon class='menu-icon' type='{{classifyIcon[index]}}' size="20" />
         <text class='menu-text'>{{item}}</text>
       </view>
@@ -21,15 +21,13 @@
       </view>
     </view>
   </i-drawer>
-  <view class='fn-coontainer'>
-    <!-- 展开侧边面板 -->
-    <view class='drawer-trigger' bindtap="toggleDrawer">
-      <i-icon type="play_fill" size="28" color="#19be6b"/>
-    </view>
-    <!-- 返回顶部 -->
-    <view class='back-top' bindtap="backTop">
-      <i-icon type="packup" size="28" color="#19be6b"/>
-    </view>
+  <!-- 展开侧边面板 -->
+  <view class='drawer-trigger' bindtap="toggleDrawer">
+    <i-icon type="play_fill" size="28" color="#19be6b"/>
+  </view>
+  <!-- 返回顶部 -->
+  <view class='back-top' bindtap="backTop">
+    <i-icon type="packup" size="28" color="#19be6b"/>
   </view>
   <view wx:for="{{currentPageData}}" wx:key="item.id" class='main-item'>
     <view class='main-item-left'>

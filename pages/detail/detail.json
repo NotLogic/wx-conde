@@ -3,10 +3,5 @@
     "i-avatar": "../../dist/avatar/index",
     "i-icon": "../../dist/icon/index"
   },
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "",
-    "navigationBarTextStyle": "black"
-  }
+  "navigationBarTitleText": ""
 }

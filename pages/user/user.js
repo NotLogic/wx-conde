@@ -78,16 +78,13 @@ Page({
   },
   initUser(loginname){
     var vm = this
-    loginname = loginname || 'alsotang'
     wx.setNavigationBarTitle({
       title: '@ ' + loginname + '的主页'
     })
     getUserDetails(loginname).then(function(res){
-      console.log(res)
       var obj={}
       obj.replay = res.recent_replies
       obj.topic = res.recent_topics
-      console.log(res.recent_replies)
       vm.setData({
         pageData: res,
         currentDataMap: obj,

@@ -1,7 +1,6 @@
 <!--pages/user/user.wxml-->
 <view>
   <view class='user-header'>
-    <!-- <image class='user-bg' src='../../images/user-bg1.jpg'></image> -->
     <view class='avator-container'>
       <image class='user-avator' src='{{pageData.avatar_url}}'></image>
       <!-- <i-avatar src="{{pageData.avatar_url}}" size="large"></i-avatar> -->

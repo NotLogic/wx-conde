@@ -4,12 +4,11 @@
     "pages/user/user",
     "pages/about/about",
     "pages/detail/detail"
-    
   ],
   "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "CNode开放接口测试",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#eee",
+    "navigationBarTitleText": "CNodeStudy",
     "navigationBarTextStyle": "black"
   },
   "networkTimeout": {

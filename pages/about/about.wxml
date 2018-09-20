@@ -1,4 +1,15 @@
 <!--pages/about/about.wxml-->
-<view>
-  本项目仅作为学习使用，禁止用于其他用途
+<view class='about-container'>
+  <view class="img-container">
+    <image class='github-img' src='https://avatars0.githubusercontent.com/u/20349460?s=40&v=4'></image>
+  </view>
+  <view class='about-item'>
+    版本：v1.0.0
+  </view>
+  <view class='about-item'>
+    github地址：https://github.com/NotLogic/wx-conde.git
+  </view>
+  <view class='about-item'>
+    本项目仅用于学习，禁止其他用途
+  </view>
 </view>

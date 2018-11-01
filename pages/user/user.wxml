@@ -2,8 +2,8 @@
 <view>
   <view class='user-header'>
     <view class='avator-container'>
-      <image class='user-avator' src='{{pageData.avatar_url}}'></image>
-      <!-- <i-avatar src="{{pageData.avatar_url}}" size="large"></i-avatar> -->
+      <!-- <image class='user-avator' src='{{pageData.avatar_url}}'></image> -->
+      <avatar avatarSrc="{{pageData.avatar_url}}"></avatar>  
     </view>
     <view class='text-center'>{{pageData.loginname}}</view>
     <view class='text-center'>{{pageData.githubUsername}}@github.com</view>
@@ -19,10 +19,7 @@
   </view>
   <view wx:for="{{currentData}}" wx:key="" class='main-item'>
     <view class='main-item-left'>
-      <navigator url="/pages/user/user?loginname={{item.author.loginname}}" class='fill-navigator'>
-        <image class='circle-image' src='{{item.author.avatar_url}}'></image>
-        <!-- <i-avatar src="{{item.author.avatar_url}}" size="large"></i-avatar> -->
-      </navigator>
+      <avatar avatarUrl="/pages/user/user?loginname={{item.author.loginname}}" avatarSrc="{{item.author.avatar_url}}"></avatar>
     </view>
     <view class='main-item-right'>
       <navigator url="/pages/detail/detail?id={{item.id}}&title={{item.title}}">

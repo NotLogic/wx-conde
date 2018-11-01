@@ -12,12 +12,6 @@
   padding-top: 20px;
   text-align: center;
 }
-.user-avator{
-  display: inline-block;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-}
 /* 切换菜单 */
 .change-container{
   display: flex;

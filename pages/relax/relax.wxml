@@ -1,0 +1,22 @@
+<!--pages/relax/relax.wxml-->
+<view class='relax-container'>
+  <view wx:if="{{!showStory}}" class='role-box'>
+    <view class='role-item'>
+      <input type='text' placeholder='小明' bindinput='inputName' wx:value='name' class='role-input' maxlength="12"></input>
+    </view>
+    <view class='role-item'>
+      <input type='text' placeholder='小丽' bindinput='inputName2' wx:value="name2" class='role-input' maxlength="12"></input>
+    </view>
+    <button bindtap="storyStart">开始制杖</button>
+  </view>
+  <view wx:if="{{showStory}}" class='story-box'>
+    <view class='story-btn-container'>
+      <button size='mini' bindtap='resetStoey' class='reset-story-btn'>重新开始</button>
+      <button size='mini' bindtap='switchStory' class='switch-story-btn'>{{readAll ? '没过瘾，重新看' : '换个故事'}}</button>
+    </view>
+    <view class='story-title'>{{storyTitle}}</view>
+    <view class='story-content-item' wx:for="{{storyContents}}" wx:key="item">
+      {{item}}
+    </view>
+  </view>
+</view>

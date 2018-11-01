@@ -1,8 +1,12 @@
 {
   "usingComponents": {
+    "i-row": "../../dist/row/index",
+    "i-col": "../../dist/col/index",
     "i-avatar": "../../dist/avatar/index",
     "i-icon": "../../dist/icon/index",
-    "i-drawer": "../../dist/drawer/index"
+    "i-drawer": "../../dist/drawer/index",
+    "avatar": "../../components/avatar/index",
+    "content": "../../components/content/index"
   },
   "enablePullDownRefresh": true
 }

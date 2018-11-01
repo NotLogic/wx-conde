@@ -83,11 +83,38 @@ Page({
           pageData[key] = res[key]
         }
       }
-      WxParse.wxParse('article', 'html', pageData.content, vm, 0)
+      WxParse.wxParse('article', 'html', pageData.content, vm, 5)
+      
+      // 处理评论的富文本
+      var replyContents = [],obj={}
+      reply.replies.forEach(function(item){
+        replyContents.push(item.content)
+      })
+      for (var i = 0; i < replyContents.length;i++){
+        obj = Object.assign(obj, WxParse.getParseData('content' + i, 'html', replyContents[i]))
+        // WxParse.wxParse('content' + i, 'html', replyContents[i], vm);
+        // if (i === replyContents.length - 1) {
+        //   WxParse.wxParseTemArray("replyContents", 'content', replyContents.length, vm)
+        // }
+      }
+      vm.setData(obj)
+      WxParse.wxParseTemArray("replyContents", 'content', replyContents.length, vm)
+
       vm.setData({
         pageData: pageData,
         reply: reply
       })
     })
   },
+  collectTap(e){
+    var collect = e.target.dataset.collect
+    console.log(collect)
+  },
+  upedTap(e) {
+    var uped = e.target.dataset.uped
+    console.log(uped)
+  },
+  wxParseTagATap(e){
+    console.log(e)
+  }
 })

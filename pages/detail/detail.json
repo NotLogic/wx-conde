@@ -1,7 +1,8 @@
 {
   "usingComponents": {
     "i-avatar": "../../dist/avatar/index",
-    "i-icon": "../../dist/icon/index"
+    "i-icon": "../../dist/icon/index",
+    "avatar": "../../components/avatar/index"
   },
   "navigationBarTitleText": ""
 }

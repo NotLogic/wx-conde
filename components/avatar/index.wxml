@@ -1,0 +1,5 @@
+<view class='avatar {{size}}'>
+  <navigator url="{{avatarUrl}}" class='{{type}}'>
+    <image class='{{type}}' src='{{avatarSrc}}'></image>
+  </navigator>
+</view>

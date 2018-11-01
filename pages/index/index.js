@@ -1,6 +1,6 @@
 //index.js
 //获取应用实例
-import { gettopics } from '../../utils/api.js'
+import { gettopics, getPrivacy } from '../../utils/api.js'
 const app = getApp()
 
 Page({
@@ -12,7 +12,7 @@ Page({
       'good': '精华',
       'share': '分享',
       'job': '招聘',
-      'dev': '客户端测试'
+      // 'dev': '客户端测试'
     },
     classifyIcon: {
       'all': 'barrage_fill',
@@ -20,7 +20,7 @@ Page({
       'good': 'praise_fill',
       'share': 'share_fill',
       'job': 'financial_fill',
-      'dev': 'warning_fill'
+      // 'dev': 'warning_fill'
     },
     currentPageData: [],
     pager: {
@@ -95,5 +95,57 @@ Page({
     vm.setData({
       drawerShow: drawerShow
     })
+  },
+  getUserInfo(){
+    wx.login({
+      success: function(res){
+        var code = res.code
+        getPrivacy(code).then(function(res){
+          console.log('res: ',res)
+          var openid = res.openid,
+            session_key = res.session_key
+          
+        }).catch(function(errMsg){
+          console.log('errMsg: ', errMsg)
+        })
+      }
+    })
+    // 注意： wx.authorize({scope: "scope.userInfo"})，需要使用 <button open-type="getUserInfo"></button>
+    // wx.authorize({
+    //   scope: 'scope.address',
+    //   success: function(data){
+    //     console.log(data)
+    //   },
+    //   fail: function(err){
+    //     console.log(err)
+    //   }
+    // })
+    // wx.getSetting({
+    //   success: function(data){
+    //     console.log('success data: ',data)
+    //   },
+    //   fail: function(err){
+    //     console.log('err: ', data)
+    //   }
+    // })
+    // wx.getUserInfo({
+    //   lang: 'zh_CN',
+    //   success: function(data){
+    //     console.log('getUserInfo data: ', data)
+    //   },
+    //   fail: function(err){
+    //     console.log('getUserInfo err: ', data)
+    //   }
+    // })
+  },
+  getAuth(){
+    // scope.userInfo  用户信息
+    // scope.userLocation  地理位置
+    // scope.address  通讯地址
+    // scope.invoiceTitle  发票抬头
+    // scope.werun  微信运动步数
+    // scope.record  录音功能
+    // scope.writePhotosAlbum  保存到相册
+    // scope.camera  摄像头
   }
 })

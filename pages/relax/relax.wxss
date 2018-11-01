@@ -1,0 +1,40 @@
+/* pages/relax/relax.wxss */
+.relax-container{
+  padding: 50rpx;
+}
+/* 男主女主输入区域 */
+.role-box{
+
+}
+.role-title{
+  margin-bottom: 30rpx;
+}
+.role-item{
+  margin-bottom: 30rpx;
+}
+.role-input{
+  padding: 20rpx;
+  border: 1rpx solid #eee;
+}
+
+.story-btn-container{
+  margin-bottom: 20rpx;
+}
+.reset-story-btn{
+
+}
+.switch-story-btn{
+  float: right;
+}
+
+.story-title{
+  margin-bottom: 10px;
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
+}
+.story-content-item{
+  font-size: 14px;
+  line-height: 24px;
+  text-indent: 28px;
+}

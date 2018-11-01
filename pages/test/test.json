@@ -1,6 +1,5 @@
 {
   "usingComponents": {
     "avatar": "../../components/avatar/index"
-  },
-  "navigationBarTitleText": ""
+  }
 }

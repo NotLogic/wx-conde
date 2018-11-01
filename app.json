@@ -1,9 +1,12 @@
 {
   "pages": [
+    "pages/relax/relax",
     "pages/index/index",
     "pages/user/user",
     "pages/about/about",
+    "pages/test/test",
     "pages/detail/detail"
+    
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -14,5 +17,26 @@
   "networkTimeout": {
     "request": 10000,
     "downloadFile": 10000
+  },
+  "tabBar": {
+    "color": "#8E8E93",
+    "selectedColor": "#B18354",
+    "borderStyle": "black",
+    "position": "bottom",
+    "backgroundColor": "rgba(255,255,255,0.82)",
+    "list": [
+      {
+        "iconPath": "/images/tabBar/home.png",
+        "selectedIconPath": "/images/tabBar/home-active.png",
+        "pagePath": "pages/index/index",
+        "text": "cNode"
+      },
+      {
+        "iconPath": "/images/tabBar/user.png",
+        "selectedIconPath": "/images/tabBar/user-active.png",
+        "pagePath": "pages/relax/relax",
+        "text": "放松一下"
+      }
+    ]
   }
 }

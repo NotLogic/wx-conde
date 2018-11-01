@@ -33,12 +33,12 @@ function wxParse(bindName = 'wxParseData', type='html', data='<div class="color:
   var transData = {};//存放转化后的数据
   if (type == 'html') {
     transData = HtmlToJson.html2json(data, bindName);
-    console.log(JSON.stringify(transData, ' ', ' '));
+    // console.log(JSON.stringify(transData, ' ', ' '));
   } else if (type == 'md' || type == 'markdown') {
     var converter = new showdown.Converter();
     var html = converter.makeHtml(data);
     transData = HtmlToJson.html2json(html, bindName);
-    console.log(JSON.stringify(transData, ' ', ' '));
+    // console.log(JSON.stringify(transData, ' ', ' '));
   }
   transData.view = {};
   transData.view.imagePadding = 0;
@@ -51,6 +51,33 @@ function wxParse(bindName = 'wxParseData', type='html', data='<div class="color:
   that.wxParseImgLoad = wxParseImgLoad;
   that.wxParseImgTap = wxParseImgTap;
 }
+
+/*
+  改写方法：因为循环设值影响性能
+
+*/
+function getParseData(bindName = 'wxParseData', type = 'html', data = '<div class="color:red;">数据不能为空</div>') {
+  var transData = {};//存放转化后的数据
+  if (type == 'html') {
+    transData = HtmlToJson.html2json(data, bindName);
+    // console.log(JSON.stringify(transData, ' ', ' '));
+  } else if (type == 'md' || type == 'markdown') {
+    var converter = new showdown.Converter();
+    var html = converter.makeHtml(data);
+    transData = HtmlToJson.html2json(html, bindName);
+    // console.log(JSON.stringify(transData, ' ', ' '));
+  }
+  transData.view = {};
+  transData.view.imagePadding = 0;
+  if (typeof (imagePadding) != 'undefined') {
+    transData.view.imagePadding = imagePadding
+  }
+  var bindData = {};
+  bindData[bindName] = transData;
+  return bindData
+} 
+
+
 // 图片点击事件
 function wxParseImgTap(e) {
   var that = this;
@@ -152,6 +179,7 @@ function emojisInit(reg='',baseSrc="/wxParse/emojis/",emojis){
 
 module.exports = {
   wxParse: wxParse,
+  getParseData: getParseData,
   wxParseTemArray:wxParseTemArray,
   emojisInit:emojisInit
 }

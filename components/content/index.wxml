@@ -1,0 +1,13 @@
+<!--components/content/index.wxml-->
+<navigator url="{{contentUrl}}">
+  <view class='title'>{{title}}</view>
+  <view class='sub-title'>
+    <text>{{replyCount}}</text>
+    <text>/</text>
+    <text>{{visitCount}}</text>
+    <text class='tab'>{{tab}}</text>
+    <text wx:if="{{top}}" class='top'>置顶</text>
+    <text wx:if="{{good}}" class='good'>精品</text>
+    <text class='time'>1分钟前</text>
+  </view>
+</navigator>

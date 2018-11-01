@@ -1,0 +1,38 @@
+/* components/content/index.wxss */
+.title{
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 75rpx;
+  font-weight: bold;
+  text-overflow:ellipsis;
+}
+.sub-title{
+  font-size: 14px;
+}
+.time{
+  float: right;
+  font-size: 12px;
+}
+.tab{
+  color: #777;
+  border-radius: 5rpx;
+  margin-left: 15rpx;
+  background-color: #efefef;
+}
+.top{
+  color: #fff;
+  border-radius: 5rpx;
+  margin-left: 15rpx;
+  background-color: #19be6b;
+}
+.good{
+  color: #ed3f14;
+  border-radius: 5rpx;
+  margin-left: 15rpx;
+  border: 1rpx solid #ed3f14;
+}
+.time{
+  font-size: 12px;
+  color: #777;
+}

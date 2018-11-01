@@ -5,9 +5,11 @@
     <view class='side-menu-container'>
       <!-- <view class='login-container'>
         <view class=''>
-          <i-avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" size="large"></i-avatar>
+          <button open-type='getUserInfo' bindtap="getUserInfo">
+            <i-avatar src="" size="large"></i-avatar>
+          </button>
         </view>
-        <view>点击头像登录</view>
+        <text>点击头像登录</text>
       </view> -->
       <view wx:for="{{classifyMap}}" wx:key="{{index}}" data-classify='{{index}}' bindtap="switchClassify" class='menu-item'>
         <i-icon class='menu-icon' type='{{classifyIcon[index]}}' size="20" />
@@ -30,27 +32,21 @@
     <i-icon type="packup" size="28" color="#19be6b"/>
   </view>
   <view wx:for="{{currentPageData}}" wx:key="item.id" class='main-item'>
-    <view class='main-item-left'>
-      <navigator url="/pages/user/user?loginname={{item.author.loginname}}" class='fill-navigator'>
-        <image class='circle-image' src='{{item.author.avatar_url}}'></image>
-        <!-- <i-avatar src="{{item.author.avatar_url}}" size="large"></i-avatar> -->
-      </navigator>
-    </view>
-    <view class='main-item-right'>
-      <navigator url="/pages/detail/detail?id={{item.id}}&title={{item.title}}">
-        <view class='main-title'>{{item.title}}</view>
-        <view class='main-sub-title'>
-          <text>{{item.reply_count}}</text>
-          <text>/</text>
-          <text class='margin-r10'>{{item.visit_count}}</text>
-          <text class='margin-r10 tab'>{{item.tab}}</text>
-          <text>
-            <text wx:if="{{item.top}}" class='top'>置顶</text>
-            <text wx:elif="{{item.good}}" class='good'>精华</text>
-          </text>
-          <text class='fr'>1分钟前</text>
-        </view>
-      </navigator>
-    </view>
+    <i-row>
+      <i-col span="5">
+        <avatar avatarUrl="/pages/user/user?loginname={{item.author.loginname}}" avatarSrc="{{item.author.avatar_url}}"></avatar>
+      </i-col>
+      <i-col span="19">
+        <content contentUrl="/pages/detail/detail?id={{item.id}}&title={{item.title}}"
+          title="{{item.title}}"
+          replyCount="{{item.reply_count}}"
+          visitCount="{{item.visit_count}}"
+          tab="{{item.tab}}"
+          top="{{item.top}}"
+          good="{{item.good}}"
+          createAt="{{item.create_at}}"
+        ></content>
+      </i-col>
+    </i-row>
   </view>
 </view>

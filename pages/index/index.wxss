@@ -7,15 +7,16 @@
 .back-top{
   z-index: 2;
   position: fixed;
-  bottom: 20px;
   background-color: rgba(0,0,0,.1);
   border-radius: 50%;
 }
 .drawer-trigger{
-  left: 20px;
+  right: 40rpx;
+  top: 40rpx;
 }
 .back-top{
-  right: 20px;
+  bottom: 40rpx;
+  right: 40rpx;
 }
 /* 左侧菜单触发器 */
 .drawer-trigger{

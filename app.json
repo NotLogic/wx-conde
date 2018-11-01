@@ -1,12 +1,11 @@
 {
   "pages": [
-    "pages/relax/relax",
     "pages/index/index",
     "pages/user/user",
     "pages/about/about",
     "pages/test/test",
+    "pages/relax/relax",
     "pages/detail/detail"
-    
   ],
   "window": {
     "backgroundTextStyle": "dark",

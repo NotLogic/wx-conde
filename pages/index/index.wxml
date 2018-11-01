@@ -25,7 +25,8 @@
   </i-drawer>
   <!-- 展开侧边面板 -->
   <view class='drawer-trigger' bindtap="toggleDrawer">
-    <i-icon type="play_fill" size="28" color="#19be6b"/>
+    <!-- <i-icon type="play_fill" size="28" color="#19be6b"/> -->
+    <i-icon type="other" size="30" color="#19be6b"/>
   </view>
   <!-- 返回顶部 -->
   <view class='back-top' bindtap="backTop">
